@@ -866,39 +866,7 @@ def tunnel():  # Handle tunnelling options for Overwatch.exe
 
 
 def searchForGamePath(patterns, start_paths):
-    matches = []
-    threads = []
-    filters = ['steamapps\\common\\Overwatch\\Overwatch.exe', 'Overwatch\\_retail_\\Overwatch.exe']
-
-    def search_path(start_path):
-        start_time = time.time()
-        i = 0
-        # time.sleep(3.1)
-        for root, dirs, files in walk(start_path):
-            i += 1
-            if i % 10 == 0:
-                if stop_flag.is_set():
-                    return False
-            matches.extend(
-                [path.join(root, filename) for pattern in patterns for filename in fnmatch.filter(files, pattern)])
-        filtered_list = [item for item in matches if not any(string in item for string in filters)]
-        for item in filtered_list:
-            matches.remove(item)
-        end_time = time.time()
-        print(f"execution time of thread = {end_time - start_time}s")
-
-    stop_flag = threading.Event()
-    for start_path in start_paths:
-        thread = threading.Thread(target=search_path, args=(start_path,))
-        thread.start()
-        threads.append(thread)
-
-    thread_timeout = 3.0
-    for thread in threads:
-        thread.join(thread_timeout)  # Wait for the thread to finish for at most 3 seconds
-        if thread.is_alive():
-            stop_flag.set()
-
+    matches = ["C:\Program Files (x86)\Overwatch\_retail_\Overwatch.exe","C:\Program Files (x86)\Steam\steamapps\common\Overwatch\Overwatch.exe"]
     return matches
 
 
