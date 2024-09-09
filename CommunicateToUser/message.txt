@@ -1,7 +1,9 @@
-Welcome to the 5.3.1 of the MINA Overwatch 2 Server Selector! Here’s what’s new:
+Dear User,
 
-New servers update --> Saudi Arabia Central
+I have updated the ip list hopfully the performence will be improved now.
 
-Reapply your option to update your block.
+Improvements mainly made on:
 
-Report any issues you encounter on our Discord server. Thank you for your support!
+EU, NA, Australia, and Singapore.
+
+Feel free to communicate issues on discord.
